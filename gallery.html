@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    body {
+        background-color: #ecf4fb;
+    }
+
+    .gallery {
+        margin: 10px 168.5px;
+    }
+
+    .gallery img {
+        transition: 1s;
+        padding: 15px;
+        width: 250px;
+        height: 200px;
+        cursor: pointer;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.1);
+        border-radius: 20px;
+        box-shadow: 0 32px 75px rgba(68, 77, 136, 0.8);
+    }
+
+    .full-img {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+    }
+
+    .full-img img {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    span {
+        position: absolute;
+        top: 5%;
+        right: 5%;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+    h1{
+        text-align: center;
+        margin: 20px;
+        padding: 15px;
+        text-decoration: underline;
+        font-size: 50px;
+        letter-spacing: 0.2rem;
+    }
+    .zoom {
+transition: transform .5s;
+width: 160px;
+height: 160px;
+align-items: center;
+}
+
+.zoom:hover {
+transform: scale(1.1);
+ border-radius: 20px;
+ box-shadow: 0 32px 75px rgba(68, 77, 136, 0.8);
+}
+</style>
+
+<body>
+    <div class="container-fluid bg-3 text-center" style="background-color: #ecf4fb">
+        <h3 class="text-white text-center" style="color: rgb(10, 10, 10); text-decoration: underline;font-weight: bolder;font-size: 40px; margin-top: 30px;letter-spacing: 0.2rem;">Different types of Mahendi</h3><br>
+        <div class="row">
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Arabic Mahendi</h3>
+            <img src="images/Arabic-mehendi.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;"
+              alt="Image">
+          </div>
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Indian Mehendi</h3>
+            <img src="images/Indian-mehendi.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;"
+              alt="Image">
+          </div>
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Pakistani Mahendi</h3>
+            <img src="images/Pakistani.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;" alt="Image">
+          </div>
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Dulhan Mahendi</h3>
+            <img src="images/Dulhan-Mahendi.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;"
+              alt="Image">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-3 text-center" style="background-color: #ecf4fb">
+        <div class="row">
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Indo Arabic Mehendi</h3>
+            <img src="images/Indo-Arabic-mehendi.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;"
+              alt="Image">
+          </div>
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Western style Mehendi</h3>
+            <img src="images/Western-style-mehendi.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;"
+              alt="Image">
+          </div>
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Moroccan Mehendi</h3>
+            <img src="images/Moroccan-mehendi.jpg" class="img-responsive zoom" style="width: 250px; height: 250px;margin-left: 25px;"
+              alt="Image">
+          </div>
+          <div class="col-sm-3">
+            <h3 style="color: darkred;font-weight: bold;">Indo Western Mehendi</h3>
+            <img src="images/Indo-Western-mehendi-design.jpg" class="img-responsive zoom"
+              style="width: 250px; height: 250px;margin-left: 25px;" alt="Image">
+          </div>
+        </div><br>
+      </div>
+    
+    <div class="full-img" id="fullimgbox">
+        <img src="images/mendi.jpg" id="fullimg">
+        <span onclick="closefullImg()">X</span>
+    </div>
+    <h1>Our Work</h1>
+    <div class="gallery">
+        <img src="images/mendi.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi2.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi3.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi5.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi6.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi7.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi8.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mahendi5.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi9.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi10.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mendi11.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mahendi.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mahendi2.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mahendi3.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mahendi4.jpg" onclick="openfullImg(this.src)">
+        <img src="images/mahendi6.jpg" onclick="openfullImg(this.src)">
+    </div>
+    <script>
+        var fullimgbox = document.getElementById("fullimgbox");
+        var fullimg = document.getElementById("fullimg");
+        function openfullImg(pic) {
+            fullimgbox.style.display = "flex";
+            fullimg.src = pic;
+        }
+        function closefullImg() {
+            fullimgbox.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

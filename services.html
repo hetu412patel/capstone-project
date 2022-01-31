@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Services</title>
+    <style>
+        :root{
+        --green:#8d0f20;
+        --black:#444444;
+        --light-color:#777777;
+        --box-shadow:.5rem .5rem 0 rgba(22,160,133,.2);
+        --text-shadow:.4rem .4rem 0 rgba(0,0,0,.2);
+        --border:.2rem solid var(--green);
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section{
+            padding: 1rem 5%;
+            }
+            section:nth-child(even){
+            background: #f5f5f5;
+            }
+            .icons-container{
+            display: grid;
+            gap: 3rem;
+            grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
+            padding-top: 3rem;
+            }
+            .icons-container .icons{
+            border: var(--border);
+            box-shadow: var(--box-shadow);
+            border-radius: .5rem;
+            text-align: center;
+            padding: 1.3rem;
+            }
+            .icons-container .icons i{
+            font-size: 4.5rem;
+            color: var(--green);
+            padding-bottom: .7rem;
+            }
+            .icons-container .icons h3{
+            font-size: 2.5rem;
+            color: var(--black);
+            padding: .5rem 0;
+            text-shadow: var(--text-shadow);
+            }
+            .icons-container .icons p{
+            font-size: 1.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: bold;
+            color: var(--light-color);
+            padding: .1rem;
+            text-shadow: var(--text-shadow);
+            }
+            .heading{
+              font-family: 'Poppins', sans-serif;
+              margin-top: 30px;
+              text-align: center;
+              padding-bottom: 2rem;
+              text-shadow: var(--text-shadow);
+              text-transform: uppercase;
+              color: var(--black);
+              font-size: 4rem;
+              letter-spacing: .2rem;
+            }
+            .heading span{
+              text-transform: uppercase;
+              color: var(--green);
+            }
+            .service{
+              margin: 0 60px;
+              padding: 5px;
+              font-weight: bold;
+              font-size: 20px;
+            }
+            .service em{
+              font-size: 20px;
+              color: var(--green);
+              font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .mahendi{
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 77vh;
+              background: #ffffff;
+            }
+            .mahendi .accordion{
+              max-width: 1200px;
+            }
+            .mahendi .accordion .contentbox{
+              position: relative;
+              margin: 10px 20px;
+            }
+            .mahendi .accordion .contentbox .label{
+              position: relative;
+              /* border: var(--box-shadow); */
+              padding: 12px;
+              background: var(--green);
+              font-weight: bold;
+              font-size: 22px;
+              letter-spacing: .16rem;
+              color: #ffffff;
+              cursor: pointer;
+            }
+            .mahendi .accordion .contentbox .label::before{
+              content: '+';
+              position: absolute;
+              top: 50%;
+              right: 20px;
+              transform: translateY(-50%);
+              font-size: 1.5rem;
+            }
+            .mahendi .accordion .contentbox.active .label::before{
+              content: '-';
+            }
+            .mahendi .accordion .contentbox .content{
+              position: relative;
+              background: rgba(219, 143, 143, 0.6);
+              height: 0;
+              overflow: hidden;
+              transition: 0.5s;
+              overflow-y: auto;
+            }
+            .mahendi .accordion .contentbox.active .content{
+              height: 150px;
+              padding: 10px;
+            }
+            .review{
+              background: #ffffff;
+            }
+            .review .box-container{
+              display: grid;
+              gap: 1.5rem;
+              grid-template-columns: repeat(auto-fit,minmax(10rem,1fr)); 
+            }
+            .review .box-container .box{
+              border: var(--border);
+              box-shadow: var(--box-shadow);
+              border-radius: 2rem;
+              padding: 1.5rem;
+              background: #ffffff;
+              text-align: center;
+              position: relative;
+              overflow: hidden;
+              z-index: 0;
+            }
+            .review .box-container .box img{
+              height: 8rem;
+              width: 8rem;
+              border-radius: 50%;
+              object-fit: cover;
+              border: .3rem solid #ffffff;
+            }
+            .review .box-container .box h3{
+              color: #ffffff;
+              font-size: 2rem;
+              padding: 1rem;
+            }
+            .review .box-container .box .stars i{
+              color: #ffffff;
+              font-size: 1.5rem;
+            }
+            .review .box-container .box .text{
+              color: var(--light-color);
+              line-height: 1.3;
+              font-size: 1.39rem;
+              padding-top: 3rem;
+            }
+            .review .box-container .box::before{
+              content: '';
+              position: absolute;
+              top: -3.12rem;left: 50%;
+              transform: translateX(-50%);
+              background: var(--green);
+              border-bottom-left-radius: 50%;
+              border-bottom-right-radius: 50%;
+              height: 21rem;
+              width: 120%;
+              z-index: -1;
+            }
+    </style>
+</head>
+<body>
+  <h1 class="heading"> Our <span>services</span></h1>
+  <div class="service"><p><h3>Mahendi designing is not just a hobby anymore nowadays. It can also be made as a serious money maker. Mahendi could be a better side business Too. So,we provide some services for better to learn and earn.</h3><br><center><em><h3>Stop Worrying...</h3><br><h3>Pick Ideas And Start Acting...</h3></em></center></p></div>
+      <div class="mahendi">
+        <div class="accordion">
+          <div class="contentbox">
+            <div class="label">Bridal Mahendi</div>
+            <div class="content">
+              <p>We also provide a different types of bridal mahendi using this service.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Instant Mahendi</div>
+            <div class="content">
+              <p>We are here for you at any time using this instant service and solve user's problem.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Tatoo Mahendi</div>
+            <div class="content">
+              <p>If you interested in tatoo mahendi, for that also we provide a better service.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Festival Mahendi</div>
+            <div class="content">
+              <p>We also provide our services in festival time, you can contact us in any festival, we are here for you any time so become tension free.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Engagement Mahendi</div>
+            <div class="content">
+              <p>We also provide engagement mahendi service. We put different engagement theams using mahendi.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Finger Mahendi</div>
+            <div class="content">
+              <p>If you interested in finger mahendi, for that also we provide a better service.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Back-hand-side Mahendi</div>
+            <div class="content">
+              <p>We also provide only back-hand side mahendi service for the user on their demand.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Mahendi Events & Exhibition</div>
+            <div class="content">
+              <p>We also organize different events and exhibition for our mahendi design for more order and more profit.</p>
+            </div>
+          </div>
+          <div class="contentbox">
+            <div class="label">Babyshower Mahendi</div>
+            <div class="content">
+              <p>Our artists are expert in any type of mahendi so for baby shower also you can contact us. They make beautiful mahendi for you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const accordion = document.getElementsByClassName('contentbox');
+        for(i = 0; i<accordion.length; i++){
+          accordion[i].addEventListener('click',function(){
+            this.classList.toggle('active');
+          });
+        }
+      </script>
+      <section class="icons-container">
+        <div class="icons">
+          <i class="fa fa-users"></i>
+          <h3>120+</h3>
+          <p>tutor at work</p>
+        </div>
+        <div class="icons">
+          <i class="fa fa-users"></i>
+          <h3>620+</h3>
+          <p>satisfied learner</p>
+        </div>
+        <div class="icons">
+          <i class="fa fa-users"></i>
+          <h3>480+</h3>
+          <p>happy client</p>
+        </div>
+        <div class="icons">
+          <i class="fa fa-users"></i>
+          <h3>50+</h3>
+          <p>Working teams</p>
+        </div>
+      </section> 
+      <section class="review" id="review">
+        <h1 class="heading"> client's <span>review</span></h1>
+        <div class="box-container">
+          <div class="box">
+            <img src="images/1234.jpg" alt="">
+            <h3>Geeta Rajan</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis labore possimus facilis doloribus sequi eius aliquid laborum alias, consequatur corporis! Et assumenda placeat temporibus blanditiis doloremque aspernatur quia, vel error.</p>
+          </div>
+          <div class="box">
+            <img src="images/1234.jpg" alt="">
+            <h3>Sita Rajan</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star-half"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis labore possimus facilis doloribus sequi eius aliquid laborum alias, consequatur corporis! Et assumenda placeat temporibus blanditiis doloremque aspernatur quia, vel error.</p>
+          </div>
+          <div class="box">
+            <img src="images/1234.jpg" alt="">
+            <h3>Ram Rajan</h3>
+            <div class="stars">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <p class="text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis labore possimus facilis doloribus sequi eius aliquid laborum alias, consequatur corporis! Et assumenda placeat temporibus blanditiis doloremque aspernatur quia, vel error.</p>
+          </div>
+        </div>
+      </section>
+</body>
+</html>
